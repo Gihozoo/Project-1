@@ -4,7 +4,7 @@ from business import Business
 
 #creating accounts
 account1 = Customer("Christian", "199290877464727", "0780987122", 2000, 1234)
-account2 = Business("Kenny", "19920010877490827", "0788978742", 25000, "4321")
+account2 = Business("Kenny", "19920010877490827", "0788978742", 25000, 4321)
 
 cont = "y"
 
@@ -13,7 +13,7 @@ cont = "y"
 
 while cont != "n":
 
-#Asking the user which account they have because there are two different types and each has its functions
+    #Asking the user which account they have because there are two different types and each has its functions
 
     what = int(input("What is the type of your account\n"
                      "1: customer Account\n"
@@ -25,9 +25,10 @@ while cont != "n":
                           "1: deposit money""\n"
                           "2: Withdraw money""\n"
                           "3: check balance""\n"
-                          "4: Transfer money"
-                          "5: buy electricity or airtime"
-                          "6: pay a business"))
+                          "4: Transfer money\n"
+                          "5: buy electricity or airtime\n"
+                          "6: pay a business\n"
+                          "7: create account\n"))
 
         if query == 1:
             account1.deposit()
@@ -63,14 +64,20 @@ while cont != "n":
             cont = input("Do you want to do another operation?\n"
                          "y: yes\n"
                          "n: no\n")
+
+        elif query == 7:
+            account1.create_account()
+            cont = input("Do you want to do another operation?\n"
+                         "y: yes\n"
+                         "n: no\n")
 #If they choose 2 we use methods from the business class
     elif what == 2:
         query = int(input("What do you want to do""\n"
                           "1: deposit money""\n"
                           "2: Withdraw money""\n"
                           "3: check balance""\n"
-                          "4: Transfer money"
-                          "5: buy electricity or airtime"))
+                          "4: Transfer money\n"
+                          "5: buy electricity or airtime\n"))
 
         if query == 1:
             account2.deposit()
